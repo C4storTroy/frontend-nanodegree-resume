@@ -59,5 +59,4 @@ var project = {
       "url" : "www.fucapi.com"
     }
   ]
-
 };
