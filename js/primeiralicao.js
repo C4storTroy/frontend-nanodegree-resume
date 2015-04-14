@@ -97,3 +97,4 @@ var weirdObject = {
     "property[]": "Pluto, Ceres, Eris, Haumea, Makemake",
     "8property": "Mars has two tiny moons: Phobos and Deimos"
 };
+console.log();
