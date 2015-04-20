@@ -1,5 +1,7 @@
+var skill = ["Java","Linux"];
+
 var bio = {
-  "name" : "Lucio",
+  "name" : "Lucio Moraes",
   "age" : 39,
   "role" : "Software Developer",
   "contact" : {
@@ -9,15 +11,16 @@ var bio = {
     "location" : "Wellington, New Zealand"
   },
   "welMessage" : "Welcome",
-  "Skills" : skill,
-  "pic" : "./images/lucio.png"
-};
-var work = {};
+  "skills" : skill,
+  "pic" : "images/lucio.png"
+}
+
+var work = {
   "position" : "Software Developer",
   "company" : "Catalyst IT ltd",
   "yearsWorked" : 1,
   "city" : "Wellington"
-};
+}
 
 var education = {
   "schools":[
@@ -42,10 +45,10 @@ var education = {
      "url" : "www.udacity.com"
    }
  ]
-};
+}
 
 var project = {
-  [
+ "projects" : [
     {
       "title" : "Educational Game",
       "company" : "ICA",
@@ -59,4 +62,28 @@ var project = {
       "url" : "www.fucapi.com"
     }
   ]
+}
+
+
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+  $("#skills").append(formattedSkill);
+
+
+var formattedName = HTMLheaderName.replace( "%data%" , bio.name);
+var formattedRole = HTMLheaderRole.replace( "%data%" , bio.role);
+
+var formattedPic = HTMLbioPic.replace( "%data%" , bio.pic);
+
+$("#header").append(formattedRole);
+$("#header").prepend(formattedName);
+$("#header").prepend(formattedPic);
+
+
+//If checks if skills length is bigger than 0
+if (bio.skills.length > 0) {
+$("#header").append(HTMLskillsStart);
+var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+$("#header").append(formattedSkill);
+var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+$("#header").append(formattedSkill);
 };
