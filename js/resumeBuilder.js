@@ -76,7 +76,7 @@ var formattedPic = HTMLbioPic.replace( "%data%" , bio.pic);
 
 $("#header").append(formattedRole);
 $("#header").prepend(formattedName);
-$("#header").prepend(formattedPic);
+$("#header").append(formattedPic);
 
 
 //If checks if skills length is bigger than 0
