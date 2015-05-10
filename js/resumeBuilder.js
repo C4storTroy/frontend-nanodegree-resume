@@ -18,20 +18,20 @@ var bio = {
   var work = {
     "jobs": [
       {
-        "position" : "Software Developer",
-        "company" : "Catalyst IT ltd",
+        "title" : "Software Developer",
+        "employer" : "Catalyst IT ltd",
         "yearsWorked" : 1,
         "city" : "Wellington"
       },
       {
-        "position" : "Software Developer",
-        "company" : "CITS Amazonas",
+        "title" : "Software Developer",
+        "employer" : "CITS Amazonas",
         "yearsWorked" : 1,
         "city" : "Manaus"
       },
       {
-        "position" : "Software Developer",
-        "company" : "CERTI Amazonia",
+        "title" : "Software Developer",
+        "employer" : "CERTI Amazonia",
         "yearsWorked" : 4,
         "city" : "Manaus"
       }
@@ -113,8 +113,11 @@ for (info in bio.skills){
 };
 
 for (info in work.jobs){
-  console.log(work.jobs[info])
-  var formattedWork = HTMLworkEmployer.replace("%data%", work.jobs.position[info]);
-  $("#header").append(formattedWork);
+  $("#workExperience").append(HTMLworkStart);
+  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[info].employer);
+  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[info].title);
+  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+  $(".work-entry:last").append(formattedEmployerTitle);
 
 }
