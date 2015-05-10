@@ -1,4 +1,4 @@
-var skill = ["Java","Linux"];
+var skill = ["Java","Linux", "Software Developer", "Python"];
 
 var bio = {
   "name" : "Lucio Moraes",
@@ -15,12 +15,28 @@ var bio = {
   "pic" : "images/lucio.png"
 }
 
-var work = {
-  "position" : "Software Developer",
-  "company" : "Catalyst IT ltd",
-  "yearsWorked" : 1,
-  "city" : "Wellington"
-}
+  var work = {
+    "jobs": [
+      {
+        "position" : "Software Developer",
+        "company" : "Catalyst IT ltd",
+        "yearsWorked" : 1,
+        "city" : "Wellington"
+      },
+      {
+        "position" : "Software Developer",
+        "company" : "CITS Amazonas",
+        "yearsWorked" : 1,
+        "city" : "Manaus"
+      },
+      {
+        "position" : "Software Developer",
+        "company" : "CERTI Amazonia",
+        "yearsWorked" : 4,
+        "city" : "Manaus"
+      }
+    ]
+  }
 
 var education = {
   "schools":[
@@ -81,9 +97,24 @@ $("#header").append(formattedPic);
 
 //If checks if skills length is bigger than 0
 if (bio.skills.length > 0) {
-$("#header").append(HTMLskillsStart);
+/*$("#header").append(HTMLskillsStart);
 var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
 $("#header").append(formattedSkill);
 var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
 $("#header").append(formattedSkill);
+var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+$("#header").append(formattedSkill);
+var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+$("#header").append(formattedSkill);*/
+for (info in bio.skills){
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[info]);
+  $("#header").append(formattedSkill);
+}
 };
+
+for (info in work.jobs){
+  console.log(work.jobs[info])
+  var formattedWork = HTMLworkEmployer.replace("%data%", work.jobs.position[info]);
+  $("#header").append(formattedWork);
+
+}
