@@ -169,3 +169,39 @@ bio contains a name, role, welcomeMessage, contacts object and skills array. The
 
 education contains an array of schools. Each school object in schools contains a name, location, degree, majors array, dates attended and a url for the school's website. education also contains an onlineCourses array. Each onlineCourse object in onlineCourses should contain a title, school, dates attended and a url for the course.
 **/
+
+
+
+
+function nameChanger(oldName) {
+    var finalName = oldName;
+    // Your code goes here!
+    var names = oldName.split(" ");
+    names[1] = names[1].toUpperCase();
+    names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
+    finalName = names.join(" ");
+
+    // Don't delete this line!
+    return finalName;
+}
+
+$(document).click(function(loc) {
+var x = loc.pageX;
+var y = loc.pageY;
+logClicks(x,y);
+});
+
+
+function locationizer(work_obj) {
+
+  var locations = [];
+
+  for (job in work_obj.jobs){
+      var newLocations = work_obj.jobs[job].location;
+      locations.push(newLocations);
+  }
+
+  return locations;
+
+
+}
